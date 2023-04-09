@@ -1,0 +1,4 @@
+name: Doggy-Revive
+version: '${project.version}'
+main: _.doggyrevive.Doggy_Revive
+api-version: 1.19
