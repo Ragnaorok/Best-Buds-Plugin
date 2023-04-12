@@ -1,7 +1,6 @@
 # Doggy-Revive for Paper 1.19.X
 
-This plugin allows Dogs to respawn at a player's bed incase of death
-requires you to have a bed otherwise you could lose your dog
+This plugin allows Tamed Wolves to respawn at a player's bed incase of death  <br> Requires Players to have a bed otherwise the Wolf will not respawn
 
 ## Prerequisites
 
@@ -24,14 +23,14 @@ mvn package
 ```` 
 
 To install your plugin in another Minecraft server just copy the file `target/mc-plugin-template-1.0-SNAPSHOT.jar` to
-that server's `plugin` folder. 
+that server's `plugin` folder. <br>
+Example Output Below:
 
 ```
-example output in console if plugin was properly added into server
 [19:33:52 INFO]: [Doggy-Revive] Enabling Doggy-Revive v1.0
 ``` 
 
-Start the Mincraft client on your computer and connect to the local Mincraft server by specifying `localhost` as Server Address.
+Start the Mincraft client on your computer and connect to the local Mincraft server by specifying `localhost` as Server Address. <br>
 Alternatively connect to the server using your public ipv4 if you have port forwarded the server
 
 
