@@ -2,7 +2,7 @@
 
 This plugin allows Tamed Wolves to respawn at a player's bed incase of death  <br> Requires Players to have a bed otherwise the Wolf will not respawn
 
-## Prerequisites
+## Prerequisites (For server hosting and or testing)
 
 In order to try this out you need the following software to be installed on your machine:
 
