@@ -1,4 +1,4 @@
-# Doggy-Revive for Paper 1.19.X
+# Best-Buds for Paper 1.19.X
 
 This plugin allows Tamed Wolves to respawn at a player's bed incase of death  <br> Requires Players to have a bed otherwise the Wolf will not respawn
 
