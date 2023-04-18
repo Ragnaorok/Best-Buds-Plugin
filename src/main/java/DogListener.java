@@ -1,13 +1,13 @@
 import org.bukkit.DyeColor;
 import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntityTameEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.material.Dye;
+
+import java.util.Objects;
 
 import static org.bukkit.DyeColor.CYAN;
 import static org.bukkit.DyeColor.GRAY;
@@ -16,8 +16,22 @@ import static org.bukkit.Material.LEAD;
 
 public class DogListener {
     @EventHandler
-    public void onDeath(EntityDeathEvent event) {
-
+    public void onDogDeath(EntityDeathEvent event) {
+        //check if the entity that died is a dog
+        if (event.getEntity() instanceof Wolf && ((Wolf) event.getEntity()).isTamed()) {
+            Wolf dog = (Wolf) event.getEntity();
+            Player player = (Player) dog.getOwner();
+            //teleport the dog to the player's bed using a try catch statement
+            try {
+                dog.teleport(player.getBedSpawnLocation());
+                player.sendRawMessage("your dog is resting at home")
+                dog.setHealth(dog.getMaxHealth());
+                dog.setSitting(true);
+                event.setCancelled(true);
+            } catch (NullPointerException e) {
+                player.sendMessage("Your dog's soul could not find its way home.");
+            }
+        }
     }
     @EventHandler
     public void OnInteract(PlayerInteractEntityEvent event) {
@@ -128,7 +142,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar green.");
+                                player.sendMessage("You have successfully dyed your dog's collar green.");
                                 break;
                             case LIGHT_BLUE:
                                 //set the collar color to light blue
@@ -136,7 +150,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar light blue.");
+                                player.sendMessage("You have successfully dyed your dog's collar light blue.");
                                 break;
                             case LIME:
                                 //set the collar color to lime
@@ -144,7 +158,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar lime.");
+                                player.sendMessage("You have successfully dyed your dog's collar lime.");
                                 break;
                             case MAGENTA:
                                 //set the collar color to magenta
@@ -152,7 +166,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar magenta.");
+                                player.sendMessage("You have successfully dyed your dog's collar magenta.");
                                 break;
                             case ORANGE:
                                 //set the collar color to orange
@@ -160,7 +174,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar orange.");
+                                player.sendMessage("You have successfully dyed your dog's collar orange.");
                                 break;
                             case PINK:
                                 //set the collar color to pink
@@ -168,7 +182,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar pink.");
+                                player.sendMessage("You have successfully dyed your dog's collar pink.");
                                 break;
                             case PURPLE:
                                 //set the collar color to purple
@@ -176,7 +190,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar purple.");
+                                player.sendMessage("You have successfully dyed your dog's collar purple.");
                                 break;
                             case RED:
                                 //set the collar color to red
@@ -184,7 +198,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar red.");
+                                player.sendMessage("You have successfully dyed your dog's collar red.");
                                 break;
                             case YELLOW:
                                 //set the collar color to yellow
@@ -192,7 +206,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar yellow.");
+                                player.sendMessage("You have successfully dyed your dog's collar yellow.");
                                 break;
                             case WHITE:
                                 //set the collar color to white
@@ -208,7 +222,7 @@ public class DogListener {
                                 //remove one dye from the player's inventory
                                 player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
                                 //send a message to the player
-                                player.sendMessage("§aYou have successfully dyed your dog's collar light gray.");
+                                player.sendMessage("You have successfully dyed your dog's collar light gray.");
                                 break;
                             //end of switch statement
                         }
