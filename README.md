@@ -1,7 +1,8 @@
-# Doggy-Revive for Paper 1.19.X
+# Best-Buds for Paper 1.19.X
 
 This plugin allows Tamed Wolves to respawn at a player's bed incase of death  <br> Requires Players to have a bed otherwise the Wolf will not respawn
-
+<br>
+Trade pets by leading an owned dog and right clicking another player
 ## Prerequisites (For server hosting and or testing)
 
 In order to try this out you need the following software to be installed on your machine:
@@ -27,7 +28,7 @@ that server's `plugin` folder. <br>
 Example Output Below:
 
 ```
-[19:33:52 INFO]: [Doggy-Revive] Enabling Doggy-Revive v1.0
+[19:33:52 INFO]: [Best-Buds] Enabling Best-Buds v1.0
 ``` 
 
 Start the Mincraft client on your computer and connect to the local Mincraft server by specifying `localhost` as Server Address. <br>
