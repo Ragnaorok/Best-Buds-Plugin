@@ -31,7 +31,7 @@ Example Output Below:
 [19:33:52 INFO]: [Best-Buds] Enabling Best-Buds v1.0
 ``` 
 
-Start the Mincraft client on your computer and connect to the local Mincraft server by specifying `localhost` as Server Address. <br>
+Start the Minecraft client on your computer and connect to the local Minecraft server by specifying `localhost` as Server Address. <br>
 Alternatively connect to the server using your public ipv4 if you have port forwarded the server
 
 
